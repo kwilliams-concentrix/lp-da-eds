@@ -1,0 +1,202 @@
+/* CARDS */
+.cards-container {
+  .cards-wrapper {
+    margin-top: var(--spacing-xbig);
+  }
+}
+
+.cards {
+  > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+    grid-gap: var(--spacing-medium);
+
+    > li {
+      border: var(--shape-border-width-1) solid var(--color-neutral-500);
+      background-color: var(--background-color);
+
+      img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .cards-card-body {
+    margin: var(--spacing-small);
+  }
+
+  .cards-card-image {
+    line-height: 0;
+  }
+}
+
+
+/* CARDS HOME */
+@font-sans:  'Gotham', 'Helvetica Neue', Arial, sans-serif;
+@home-banner-basic-bkg-1:   #2e2822;
+@home-banner-basic-bkg-2:   #8f705a;
+@home-banner-basic-bkg-3:   #504d36;
+
+main {
+  .hero-container {
+    div:nth-child(1 of .cards-wrapper),
+    div:nth-child(2 of .cards-wrapper) {
+      .cards.block {
+        > ul {
+          gap: 55px;
+          grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+
+          li {
+            border-radius: 0;
+            box-shadow: none;
+            display: flex;
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+
+            &:nth-child(1) {
+              background-color: @home-banner-basic-bkg-1;
+            }
+
+            &:nth-child(2) {
+              background-color: @home-banner-basic-bkg-2;
+            }
+
+            .cards-card-image {
+              width: 100%;
+            }
+
+            .cards-card-body {
+              padding: 40px;
+              width: 100%;
+            }
+
+            img {
+              aspect-ratio: auto;
+              height: 100%;
+            }
+
+            h2 {
+              color: white;
+              font-size: 40px;
+              line-height: 56px;
+            }
+
+            h2:last-of-type a,
+            .button-container a {
+              background-color: transparent;
+              border: 1px solid white;
+              border-radius: 5px;
+              color: white;
+              float: left;
+              font-family: @font-sans;
+              font-size: 16px;
+              font-weight: 700;
+              margin-top: 24px;
+              padding: 14.4px 23.4px;
+              line-height: 16px;
+              text-transform: none;
+
+              &:hover {
+                background-color: #fafafa1a;
+                text-decoration: none;
+              }
+            }
+
+            p {
+              color: white;
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 19.6px;
+              margin: 8px 0 0;
+            }
+          }
+        }
+      }
+    }
+
+    div:nth-child(2 of .cards-wrapper) {
+      .cards.block {
+        > ul li {
+          &:nth-child(1) {
+            background-color: @home-banner-basic-bkg-3;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (min-width:600px) {
+  /* CARDS HOME */
+  main .hero-container {
+    div:nth-child(1 of .cards-wrapper),
+    div:nth-child(2 of .cards-wrapper) {
+      .cards.block {
+        > ul li {
+          .cards-card-body {
+            padding: 80px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (width >= 900px) {
+  /* CARDS HOME */
+  main {
+    .hero-container {
+      div:nth-child(1 of .cards-wrapper),
+      div:nth-child(2 of .cards-wrapper) {
+        .cards.block {
+          > ul li {
+            border-radius: 5px;
+
+            h2 {
+              font-size: 64px;
+              line-height: 76.8px;
+            }
+
+            p {
+              font-size: 18px;
+              line-height: 25.2px;
+            }
+
+            > div {
+              max-height: 396px;
+            }
+
+            &:nth-child(2) {
+              > div {
+                max-height: 444px;
+              }
+            }
+
+            .cards-card-image {
+              width: calc(100% - 557px)
+            }
+
+            .cards-card-body {
+              width: 557px;
+            }
+          }
+        }
+      }
+
+      div:nth-child(2 of .cards-wrapper) {
+        .cards.block {
+          > ul li > div {
+            max-height: 546px;
+          }
+        }
+      }
+    }
+  }
+}

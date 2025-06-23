@@ -1,10 +1,11 @@
+/* COLUMNS */
+.columns img {
+  width: 100%;
+}
+
 .columns > div {
   display: flex;
   flex-direction: column;
-}
-
-.columns img {
-  width: 100%;
 }
 
 .columns > div > div {
@@ -19,7 +20,114 @@
   display: block;
 }
 
+/* COLUMNS HOME */
+main .hero-container div:nth-child(1 of .columns-wrapper) .columns.block > div {
+  align-items: start;
+  display: grid;
+  gap: 24px;
+  --columns-cols: 2;
+}
+
+main .hero-container div:nth-child(1 of .columns-wrapper) .columns.block h2 {
+  font-family: Gotham, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 25.2px;
+  text-align: center;
+}
+
+main .hero-container div:nth-child(2 of .columns-wrapper) .columns.block {
+  display: grid;
+  gap: 20px;
+}
+
+main .hero-container div:nth-child(2 of .columns-wrapper) .columns.block img {
+  border-radius: 10px;
+}
+
+main .hero-container div:nth-child(2 of .columns-wrapper) .columns.block > div {
+  flex-direction: row;
+  gap: 40px;
+}
+
+main .hero-container div:nth-child(2 of .columns-wrapper) .columns.block .button-container {
+  margin: 0;
+  text-align: center;
+}
+
+main .hero-container div:nth-child(2 of .columns-wrapper) .columns.block .button-container a {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25.2px;
+  padding: 0;
+}
+
+main .hero-container div:nth-child(2 of .columns-wrapper) .columns.block .button-container a:hover {
+  opacity: 0.7;
+}
+
+main .hero-container div:nth-child(3 of .columns-wrapper) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1162px;
+}
+
+main .hero-container div:nth-child(3 of .columns-wrapper) .columns.block > div {
+  align-items: center;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 48px;
+}
+
+main .hero-container div:nth-child(3 of .columns-wrapper) .columns.block > div .columns-img-col:nth-child(1) {
+  max-width: 59px;
+}
+
+main .hero-container div:nth-child(3 of .columns-wrapper) .columns.block > div .columns-img-col:nth-child(2) {
+  max-width: 124px;
+}
+
+main .hero-container div:nth-child(3 of .columns-wrapper) .columns.block > div .columns-img-col:nth-child(3) {
+  max-width: 114px;
+}
+
+main .hero-container div:nth-child(3 of .columns-wrapper) .columns.block > div .columns-img-col:nth-child(4) {
+  max-width: 222px;
+}
+
+main .hero-container div:nth-child(3 of .columns-wrapper) .columns.block > div .columns-img-col:nth-child(5) {
+  max-width: 88px;
+}
+
+main .hero-container div:nth-child(3 of .columns-wrapper) .columns.block > div .button-container {
+  flex: 100%;
+  text-align: center;
+}
+
+main .hero-container div:nth-child(3 of .columns-wrapper) .columns.block > div .button-container a {
+  background-color: transparent;
+  border: 1px solid #bbb;
+  box-shadow: none;
+  color: black;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+  padding: 14.4px 23.4px;
+}
+
+main .hero-container div:nth-child(3 of .columns-wrapper) .columns.block > div .button-container a:hover {
+  background-color: #f0f0f0;
+}
+
+main .hero-container div:nth-child(3 of .columns-wrapper) .columns.block > div .button-container p {
+  margin: 0;
+}
+
 @media (width >= 900px) {
+  /* COLUMNS */
   .columns > div {
     align-items: center;
     flex-direction: unset;
@@ -29,5 +137,35 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+
+  /* COLUMNS HOME */
+  main .hero-container div:nth-child(1 of .columns-wrapper) .columns.block > div {
+    --columns-cols: 4;
+  }
+
+  main .hero-container div:nth-child(2 of .columns-wrapper) .columns.block .button-container a {
+    font-size: 37px;
+    line-height: 51.7px;
+  }
+
+  main .hero-container div:nth-child(3 of .columns-wrapper) .columns.block > div .columns-img-col:nth-child(1) {
+    max-width: 80px;
+  }
+
+  main .hero-container div:nth-child(3 of .columns-wrapper) .columns.block > div .columns-img-col:nth-child(2) {
+    max-width: 170px;
+  }
+
+  main .hero-container div:nth-child(3 of .columns-wrapper) .columns.block > div .columns-img-col:nth-child(3) {
+    max-width: 156px;
+  }
+
+  main .hero-container div:nth-child(3 of .columns-wrapper) .columns.block > div .columns-img-col:nth-child(4) {
+    max-width: 210px;
+  }
+
+  main .hero-container div:nth-child(3 of .columns-wrapper) .columns.block > div .columns-img-col:nth-child(5) {
+    max-width: 120px;
   }
 }

@@ -1,0 +1,545 @@
+#account-dropdown-button {
+  span {
+    display: none;
+  }
+}
+
+#close-header-banner {
+  margin-right: 0.5rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1440px;
+}
+
+header {
+  > * {
+    align-items: center;
+  }
+
+  background-color: white;
+
+  button {
+    &#customer-menu {
+      line-height: normal;
+    }
+  }
+
+  .container {
+    .col {
+      align-items: center;
+      display: flex;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+    }
+
+    .row {
+      display: flex;
+      gap: 2rem;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  &.collapsed {
+    #account-dropdown-button {
+      span {
+        display: none;
+      }
+    }
+
+    #header-main {
+      align-items: normal;
+    }
+
+    #menu-search-icon {
+      display: block;
+    }
+
+    #nav {
+      width: 100%;
+    }
+
+    .search-bar-container {
+      display: none;
+      // width: auto;
+    }
+  }
+
+  .header.block {
+    background-color: white;
+    position: relative;
+    z-index: 2;
+  }
+
+  height: auto;
+
+  img.lamps-plus {
+    max-width: 140px;
+  }
+
+  #logobar {
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1.6rem;
+    padding-top: 1.6rem;
+  }
+
+  .logo-lampsplus,
+  .logo-lampsplus-pros {
+    max-width: 140px;
+    width: 100%;
+  }
+
+  .logo-lampsplus-pros {
+    display: none;
+    max-width: 286px;
+  }
+
+  #menu-search-icon {
+    .ico-search-close {
+      display: none;
+    }
+  }
+
+  nav {
+    display: none;
+    column-gap: 1rem;
+
+    #mobile-nav-back {
+      display: none;
+    }
+
+    row-gap: 0;
+
+    &.show-subnav {
+      #mobile-nav-back {
+        display: block;
+      }
+
+      #mobile-nav-header {
+        background-color: #f8f8f8;
+      }
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      margin: 0;
+    }
+  }
+
+  .nav-drop {
+    &[aria-expanded='true'] .submenu-wrapper {
+      display: flex;
+    }
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #nav-hamburger {
+    display: flex;
+  }
+
+  .nav-link {
+    border-color: transparent;
+    border-style: solid;
+    font-weight: 700;
+    &:hover {
+      border-bottom-color: rgb(204, 204, 204);
+      text-decoration: none;
+    }
+    letter-spacing: normal;
+  }
+
+  .nav-sections {
+    column-gap: 1rem;
+
+    > div:not(.nav-menu-container, .nav-menu-feature-container) {
+      display: none;
+    }
+
+    overflow-y: auto;
+  }
+
+  .nav-wrapper > * {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .overlay {
+    // background: rgba(0, 0, 0, 0.3);
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  .panel.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  position: sticky;
+
+  #search {
+    font-size: 1.2rem;
+  }
+
+  &.show-nav {
+    #nav {
+      display: flex;
+    }
+
+    .overlay {
+      display: block;
+    }
+  }
+
+  top: -75px;
+
+  #top-bar {
+    align-items: center;
+    background-color: black;
+    color: white;
+    display: flex;
+
+    .close-button {
+      align-items: center;
+      display: inherit;
+    }
+
+    .container {
+      align-items: center;
+      justify-content: center;
+    }
+
+    font-size: 1.4rem;
+
+    &.hide {
+      display: none;
+    }
+
+    padding: 0.625rem 3.5rem;
+    text-align: center;
+  }
+
+  #top-links {
+    align-items: center;
+    border-bottom: 1px solid #e6e6e6;
+    column-gap: 1.5rem;
+
+    .container {
+      justify-content: flex-end;
+      -moz-column-gap: 1.5rem;
+      column-gap: 1.5rem;
+      padding-bottom: 0.75rem;
+      padding-top: 0.75rem;
+    }
+
+    #store-locator-text {
+      margin-right: 0.5rem;
+    }
+
+    #store-locator-input {
+      border-radius: 0.5rem;
+      height: 2.2rem;
+      width: 4.3rem;
+    }
+
+    ul {
+      align-items: center;
+      column-gap: 1.5rem;
+      display: flex;
+      list-style: none;
+      margin: 0;
+    }
+  }
+
+  // .top-main {
+  //   align-items: center;
+  //   display: flex;
+  //   .close-button {
+  //     align-items: center;
+  //     display: inherit;
+  //   }
+  // }
+
+  z-index: 2;
+}
+
+#header-search {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  display: none;
+  flex-grow: 2;
+
+  &.show {
+    background: white;
+    display: block;
+    left: 0;
+    margin-top: 4rem;
+
+    nav {
+      display: none;
+    }
+
+    padding: 1rem;
+    position: absolute;
+    right: 0;
+
+    .search-bar-container {
+      display: flex;
+      width: 100%;
+    }
+  }
+}
+
+#header-utilities {
+  justify-content: flex-end;
+}
+
+.header-wrapper {
+  padding: 0;
+}
+
+#mobile-nav-header {
+  align-items: center;
+
+  button {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  display: flex;
+  height: 5.6rem;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+#mobile-nav-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+#nav {
+  background-color: white;
+  bottom: 0;
+  display: none;
+  flex-direction: column;
+  font-size: 1.4rem;
+  justify-content: flex-start;
+  left: 0;
+  overflow-x: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.nav-sections {
+  flex-direction: column;
+  margin-top: 6rem;
+}
+
+body.pro {
+  .logo-lampsplus {
+    display: none;
+  }
+
+  .logo-lampsplus-pros {
+    display: block;
+  }
+
+  #top-links li[data-name='pros'] {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  header {
+    img.logo-lampsplus {
+      max-width: 180px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  nav {
+    flex-direction: column;
+  }
+
+  #nav {
+    background: white;
+    bottom: 0;
+    justify-content: flex-start;
+  }
+
+  .nav-link {
+    align-items: center;
+    display: flex;
+    height: 5rem;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-wrapper.show-nav {
+    #nav {
+      left: 0;
+    }
+  }
+
+  #mobile-nav-header {
+    position: relative;
+  }
+
+  #nav {
+    --nav-width: 40%;
+    display: flex;
+    left: calc(var(--nav-width) * (-1));
+    position: fixed;
+    right: auto;
+    transition: all 0.2s ease-in-out;
+    width: var(--nav-width);
+  }
+
+  .nav-sections {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .header-wrapper.show-nav {
+    #nav {
+      box-shadow: 10px 0 10px rgba(102, 102, 102, 0.3);
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  // logged out
+  body {
+    .nav-drop a.highlight {
+      color: #cc0000;
+    }
+  }
+
+  // logged in pro
+  body.pro {
+    --color-pro: #0077bb;
+
+    .nav-drop a.highlight {
+      color: var(--color-pro);
+    }
+
+    #top-links {
+      background-color: var(--color-pro);
+      color: white;
+    }
+  }
+
+  #close-header-banner {
+    margin-right: 0;
+  }
+
+  header {
+    .container {
+      .col {
+        padding-bottom: 1.7rem;
+        padding-top: 1.7rem;
+      }
+    }
+
+    #nav-hamburger {
+      display: none;
+    }
+    img.logo-lampsplus {
+      max-width: 200px;
+    }
+  }
+
+  #header-search {
+    box-shadow: none;
+  }
+
+  #menu-search-icon {
+    display: none;
+  }
+
+  #mobile-nav-header {
+    display: none;
+  }
+
+  #nav {
+    display: flex;
+    font-size: 1.4rem;
+    left: auto;
+    overflow: visible;
+    position: static;
+    width: 100%;
+  }
+
+  nav li {
+    border-bottom-color: #cbcbcb;
+  }
+
+  .nav-drop {
+    > a {
+      border-width: 5px 0 5px;
+    }
+
+    .arrow-right {
+      display: none;
+    }
+  }
+
+  .nav-sections {
+    flex-direction: row;
+    margin-top: auto;
+  }
+
+  #top-links {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #header-search {
+    display: block;
+
+    &.show {
+      margin-top: 0;
+      position: relative;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  header {
+    #account-dropdown-button {
+      span {
+        display: flex;
+      }
+    }
+  }
+
+  header.collapsed {
+    #account-dropdown-button {
+      span {
+        display: none;
+      }
+    }
+  }
+}

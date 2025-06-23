@@ -1,3 +1,4 @@
+/* CARDS */
 .cards-container .cards-wrapper {
   margin-top: var(--spacing-xbig);
 }
@@ -16,6 +17,12 @@
   background-color: var(--background-color);
 }
 
+.cards > ul > li img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
 .cards .cards-card-body {
   margin: var(--spacing-small);
 }
@@ -24,8 +31,142 @@
   line-height: 0;
 }
 
-.cards > ul > li img {
+/* CARDS HOME */
+main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul,
+main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul {
+  gap: 55px;
+  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+}
+
+main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li,
+main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li {
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-flow: row-reverse wrap;
+}
+
+main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li:nth-child(1),
+main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li:nth-child(1) {
+  background-color: #2e2822;
+}
+
+main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li:nth-child(2),
+main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li:nth-child(2) {
+  background-color: #8f705a;
+}
+
+main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li .cards-card-image,
+main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li .cards-card-image {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+}
+
+main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li .cards-card-body,
+main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li .cards-card-body {
+  padding: 40px;
+  width: 100%;
+}
+
+main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li img,
+main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li img {
+  aspect-ratio: auto;
+  height: 100%;
+}
+
+main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li h2,
+main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li h2 {
+  color: white;
+  font-size: 40px;
+  line-height: 56px;
+}
+
+main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li h2:last-of-type a,
+main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li h2:last-of-type a,
+main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li .button-container a,
+main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li .button-container a {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  float: left;
+  font-family: Gotham, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 24px;
+  padding: 14.4px 23.4px;
+  line-height: 16px;
+  text-transform: none;
+}
+
+main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li h2:last-of-type a:hover,
+main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li h2:last-of-type a:hover,
+main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li .button-container a:hover,
+main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li .button-container a:hover {
+  background-color: #fafafa1a;
+  text-decoration: none;
+}
+
+main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li p,
+main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li p {
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+  margin: 8px 0 0;
+}
+
+main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li:nth-child(1) {
+  background-color: #504d36;
+}
+
+@media (width >= 600px) {
+  /* CARDS HOME */
+  main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li .cards-card-body,
+  main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li .cards-card-body {
+    padding: 80px;
+  }
+}
+
+@media (width >= 900px) {
+  /* CARDS HOME */
+  main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li,
+  main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li {
+    border-radius: 5px;
+  }
+
+  main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li h2,
+  main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li h2 {
+    font-size: 64px;
+    line-height: 76.8px;
+  }
+
+  main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li p,
+  main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li p {
+    font-size: 18px;
+    line-height: 25.2px;
+  }
+
+  main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li > div,
+  main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li > div {
+    max-height: 396px;
+  }
+
+  main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li:nth-child(2) > div,
+  main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li:nth-child(2) > div {
+    max-height: 444px;
+  }
+
+  main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li .cards-card-image,
+  main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li .cards-card-image {
+    width: calc(100% - 557px);
+  }
+
+  main .hero-container div:nth-child(1 of .cards-wrapper) .cards.block > ul li .cards-card-body,
+  main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li .cards-card-body {
+    width: 557px;
+  }
+
+  main .hero-container div:nth-child(2 of .cards-wrapper) .cards.block > ul li > div {
+    max-height: 546px;
+  }
 }

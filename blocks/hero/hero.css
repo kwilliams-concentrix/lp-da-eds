@@ -1,37 +1,385 @@
-.hero-container .hero-wrapper {
+/* HERO */
+.hero {
+  min-height: 300px;
+  padding: 40px 24px;
+  position: relative;
+}
+
+.hero h1 {
+  color: var(--background-color);
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero picture {
+  box-sizing: border-box;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
+}
+
+.hero img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* HERO HOME */
+main .hero-container {
+  margin: 0 auto;
+  max-width: 1440px;
+
+  /* Move div child 1 columns wrapper to columns/columns.less */
+
+  /* Move div childs 1,2 cards wrapper to cards/cards.less */
+
+  /* Move div childs 2,3 columns wrapper to columns/columns.less */
+}
+
+main .hero-container h1,
+main .hero-container h2,
+main .hero-container h3 {
+  font-family: 'Chronicle Deck', Georgia, Times, serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+main .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
 }
 
-.hero {
-  position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block {
+  column-gap: 24px;
+  display: flex;
+  min-height: 510px;
+  padding: 0;
 }
 
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block h2:not(#shop-now) {
+  text-shadow: 3px 3px 10px rgb(0 0 0 / 25%);
 }
 
-.hero picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block h2 a {
+  border: 1px solid white;
+  border-radius: 5px;
+  display: inline-block;
+  font-family: Gotham, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14px;
+  padding: 12px 15.3px;
+  text-shadow: none;
 }
 
-.hero img {
-  object-fit: cover;
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block h2 a:hover {
+  text-decoration: none;
+}
+
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block #winter-sale,
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block #-clearance {
+  font-size: 40px;
+  line-height: 56px;
+}
+
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block #up-to-50-off {
+  font-family: Gotham, 'Helvetica Neue', Arial, sans-serif;
   width: 100%;
-  height: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25.2px;
+}
+
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block #shop-now {
+  width: 100%;
+}
+
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block #shop-now a {
+  background-color: white;
+  color: black;
+  margin-top: 8px;
+}
+
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block #shop-now a:hover {
+  opacity: 0.7;
+}
+
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div {
+  position: relative;
+}
+
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div:first-of-type {
+  min-height: 365px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div:first-of-type::before {
+  bottom: 0;
+  content: "";
+  background-image: linear-gradient(180deg, transparent, #000);
+  height: 35%;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  width: 100%;
+}
+
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div:first-of-type > div:last-of-type {
+  bottom: 0;
+  column-gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  left: 0;
+  padding: 32px;
+  position: absolute;
+  width: 100%;
+}
+
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div:last-of-type {
+  display: grid;
+  row-gap: 24px;
+}
+
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div:last-of-type > div {
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: flexbox;
+  display: flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  flex-direction: column;
+  flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  justify-content: center;
+  min-height: 235px;
+  padding: 16px 45px;
+  width: 100%;
+  text-align: center;
+}
+
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div:last-of-type > div:first-of-type {
+  background-color: #7c5744;
+}
+
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div:last-of-type > div:last-of-type {
+  background-color: #6a8284;
+}
+
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div:last-of-type > div h3 {
+  font-size: 19px;
+  line-height: 26.6px;
+  margin-bottom: 8px;
+}
+
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div:last-of-type > div p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+  margin: 0;
+}
+
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div:last-of-type .button-container a {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  font-size: 14px;
+  line-height: 14px;
+  margin-top: 13.49px;
+  padding: 12px 15.3px;
+}
+
+main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div:last-of-type .button-container a:hover {
+  background-color: #fafafa1a;
+}
+
+main .hero-container div:nth-child(2 of .hero-wrapper),
+main .hero-container div:nth-child(3 of .hero-wrapper) {
+  padding: 0 16px;
+}
+
+main .hero-container div:nth-child(2 of .hero-wrapper) .hero.block,
+main .hero-container div:nth-child(3 of .hero-wrapper) .hero.block {
+  min-height: 354px;
+}
+
+main .hero-container div:nth-child(2 of .hero-wrapper) .hero.block::before,
+main .hero-container div:nth-child(3 of .hero-wrapper) .hero.block::before {
+  bottom: 0;
+  content: "";
+  background-image: linear-gradient(180deg, transparent, #000);
+  height: 35%;
+  left: 0;
+  opacity: 0.1;
+  position: absolute;
+  width: 100%;
+}
+
+main .hero-container div:nth-child(2 of .hero-wrapper) .hero.block > div > div:last-of-type,
+main .hero-container div:nth-child(3 of .hero-wrapper) .hero.block > div > div:last-of-type {
+  bottom: 0;
+  left: 0;
+  min-height: 225px;
+  padding: 32px 32px 17px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+main .hero-container div:nth-child(2 of .hero-wrapper) .hero.block > div > div:last-of-type h2,
+main .hero-container div:nth-child(3 of .hero-wrapper) .hero.block > div > div:last-of-type h2 {
+  font-size: 40px;
+  line-height: 56px;
+  text-shadow: 3px 3px 10px rgb(0 0 0 / 25%);
+}
+
+main .hero-container div:nth-child(2 of .hero-wrapper) .hero.block > div > div:last-of-type h2:last-of-type a,
+main .hero-container div:nth-child(3 of .hero-wrapper) .hero.block > div > div:last-of-type h2:last-of-type a {
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  font-family: Gotham, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  margin-top: 20px;
+  padding: 15px 23.5px;
+}
+
+main .hero-container div:nth-child(2 of .hero-wrapper) .hero.block > div > div:last-of-type h2:last-of-type a:hover,
+main .hero-container div:nth-child(3 of .hero-wrapper) .hero.block > div > div:last-of-type h2:last-of-type a:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+main .hero-container div:nth-child(2 of .hero-wrapper) .hero.block img,
+main .hero-container div:nth-child(3 of .hero-wrapper) .hero.block img {
+  border-radius: 5px;
+}
+
+@media (width < 900px) {
+  /* HERO HOME */
+  main .hero-container .hero.block {
+    flex-direction: column;
+    row-gap: 24px;
+  }
+}
+
+@media (width >= 600px) {
+  /* HERO HOME */
+  main .hero-container {
+    /* Move div childs 1,2 cards wrapper to cards/cards.less */
+  }
+
+  main .hero-container > div,
+  main .hero-container div:nth-child(2 of .hero-wrapper),
+  main .hero-container div:nth-child(3 of .hero-wrapper) {
+    padding: 0 24px;
+  }
+}
+
+@media (width >= 600px) and (width <= 899px) {
+  /* HERO HOME */
+  main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div:last-of-type {
+    display: flex;
+    column-gap: 24px;
+  }
+
+  main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div:last-of-type > div {
+    width: 50%;
+  }
 }
 
 @media (width >= 900px) {
+  /* HERO */
   .hero {
     padding: 40px 32px;
+  }
+
+  /* HERO HOME */
+  main .hero-container {
+    margin-bottom: 24px;
+    margin-top: 24px;
+
+    /* Move default content wrapper to tailwind/blocks/structure */
+
+    /* Move div child 1 columns wrapper to columns/columns.less */
+
+    /* Move div childs 1,2 cards wrapper to cards/cards.less */
+
+    /* Move div childs 2,3 columns wrapper to columns/columns.less */
+  }
+
+  main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block #winter-sale,
+  main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block #-clearance {
+    font-size: 64px;
+    line-height: 76.8px;
+  }
+
+  main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div:first-of-type {
+    width: 66.6667%;
+  }
+
+  main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div:last-of-type {
+    width: 33.3333%;
+  }
+
+  main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div:last-of-type > div {
+    align-items: start;
+    border-radius: 5px;
+    text-align: left;
+  }
+
+  main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div:last-of-type > div h3 {
+    font-size: 25px;
+    line-height: 35px;
+  }
+
+  main .hero-container div:nth-child(1 of .hero-wrapper) .hero.block > div:last-of-type > div p {
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+
+  main .hero-container div:nth-child(2 of .hero-wrapper) .hero.block,
+  main .hero-container div:nth-child(3 of .hero-wrapper) .hero.block {
+    min-height: 800px;
+  }
+
+  main .hero-container div:nth-child(2 of .hero-wrapper) .hero.block > div > div:last-of-type,
+  main .hero-container div:nth-child(3 of .hero-wrapper) .hero.block > div > div:last-of-type {
+    padding-bottom: 78px;
+  }
+
+  main .hero-container div:nth-child(2 of .hero-wrapper) .hero.block > div > div:last-of-type h2,
+  main .hero-container div:nth-child(3 of .hero-wrapper) .hero.block > div > div:last-of-type h2 {
+    font-size: 64px;
+    line-height: 76.8px;
+  }
+}
+
+@media (width > 1440px) {
+  /* HERO HOME */
+  main .hero-container > div {
+    padding: 0;
+  }
+
+  main .hero-container div:nth-child(2 of .hero-wrapper),
+  main .hero-container div:nth-child(3 of .hero-wrapper) {
+    padding: 0;
   }
 }
