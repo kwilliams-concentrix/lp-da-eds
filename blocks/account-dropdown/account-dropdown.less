@@ -1,0 +1,29 @@
+.account-dropdown {
+  font-size: 1.4rem;
+
+  nav {
+    a {
+      display: block;
+      padding: 0.5rem;
+      font-weight: normal;
+    }
+
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    display: none;
+    margin-top: 0.75rem;
+    padding: 0.8rem 2rem;
+    position: absolute;
+
+    &.show {
+      display: block;
+    }
+
+    z-index: 5;
+  }
+}
+
+#account-dropdown-button {
+  display: flex;
+}

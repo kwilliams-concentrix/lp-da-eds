@@ -1,0 +1,179 @@
+.nav-menu.block {
+  --transition: all 0.2s ease-in-out;
+}
+.nav-menu.block a {
+  align-items: center;
+  display: flex;
+  font-weight: 400;
+  justify-content: space-between;
+  line-height: 5rem;
+  width: 100%;
+}
+.nav-menu.block img {
+  margin-bottom: 1rem;
+}
+.nav-menu.block li.show ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  left: 0;
+}
+.nav-menu.block .section-title {
+  display: none;
+  font-family: 'Chronicle Deck', serif;
+  font-size: 2.8rem;
+  line-height: 100%;
+  margin-bottom: 2rem;
+  word-wrap: break-word;
+}
+.nav-menu.block.show .nav-drop .nav-link {
+  border-bottom-color: #cccccc;
+}
+.nav-menu.block.show .submenu-wrapper {
+  display: flex;
+  left: 0;
+}
+.nav-menu.block .submenu-category ul {
+  background-color: white;
+  bottom: 0;
+  left: 0;
+  left: 100%;
+  padding: 0 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: var(--transition);
+}
+.nav-menu.block .submenu-wrapper {
+  bottom: 0;
+  padding-bottom: 1rem;
+}
+.nav-menu.block .submenu-wrapper .container {
+  flex-direction: column;
+}
+.nav-menu.block .submenu-wrapper .container > div {
+  flex-basis: auto;
+}
+.nav-menu.block .submenu-wrapper .container > div:first-child a {
+  font-weight: normal;
+}
+.nav-menu.block .submenu-wrapper p {
+  line-height: 1.9rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+.nav-menu.block ul {
+  display: block;
+}
+.nav-menu.block ul ul a {
+  font-weight: normal;
+}
+.submenu-wrapper {
+  align-items: flex-start;
+  background-color: #fff;
+  box-sizing: border-box;
+  cursor: auto;
+  flex-direction: column;
+  font-family: var(--fontHeading);
+  left: 100%;
+  overflow: hidden auto;
+  padding: 0 calc((100% - 1280px) / 2);
+  position: absolute;
+  top: 5.6rem;
+  transition: var(--transition);
+  width: 100%;
+  z-index: 4;
+}
+.submenu-wrapper #topbar {
+  font-size: 1.4rem;
+}
+.submenu-wrapper ul {
+  display: block;
+}
+@media screen and (min-width: 900px) {
+  .nav-menu.block a {
+    font-weight: 500;
+    line-height: 1.4em;
+  }
+  .nav-menu.block .arrow-right {
+    display: none;
+  }
+  .nav-menu.block .section-title {
+    display: block;
+  }
+  .nav-menu.block .submenu-header {
+    display: none;
+  }
+  .nav-menu.block .submenu-links li a {
+    font-weight: normal;
+  }
+  .nav-menu.block .submenu-links li:first-child > a {
+    font-weight: 700;
+  }
+  .nav-menu.block .submenu-title {
+    font-size: 4.5rem;
+    line-height: normal;
+  }
+  .nav-menu.block .submenu-wrapper {
+    background-color: white;
+    border: 1px solid transparent;
+    bottom: auto;
+    box-shadow: 0 10px 10px rgba(102, 102, 102, 0.3);
+    display: none;
+    gap: 5.5rem;
+    justify-content: space-between;
+    left: 0;
+    padding: 2.5rem;
+    position: absolute;
+    top: auto;
+    width: 100%;
+  }
+  .nav-menu.block .submenu-wrapper .container {
+    flex-direction: row;
+  }
+  .nav-menu.block .submenu-wrapper img {
+    height: auto;
+    max-width: 24rem;
+  }
+  .nav-menu.block .submenu-wrapper li > * {
+    margin-bottom: 1.4rem;
+  }
+  .nav-menu.block .submenu-wrapper li > a {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-menu.block .submenu-wrapper .menu-col {
+    padding: 2.5rem;
+    width: 20%;
+  }
+  .nav-menu.block .submenu-wrapper .menu-col.empty + .menu-col {
+    border-width: 0;
+  }
+  .nav-menu.block .submenu-wrapper .menu-col:first-child,
+  .nav-menu.block .submenu-wrapper .menu-col:not(.empty):first-child {
+    border-width: 0;
+  }
+  .nav-menu.block .submenu-wrapper .menu-col.image-content:not(.empty) {
+    border-width: 0;
+  }
+  .nav-menu.block .submenu-wrapper .menu-col:not(.empty) {
+    border-left: 1px solid #d9d9d9;
+  }
+  .nav-menu.block .submenu-wrapper .submenu-feature,
+  .nav-menu.block .submenu-wrapper .submenu-links,
+  .nav-menu.block .submenu-wrapper .submenu-links2,
+  .nav-menu.block .submenu-wrapper .submenu-section {
+    display: flex;
+    justify-content: stretch;
+  }
+  .nav-menu.block .submenu-wrapper ul {
+    margin-bottom: 1rem;
+  }
+  .nav-menu.block .submenu-wrapper ul ul {
+    display: block;
+    left: 0;
+    padding: 0;
+    position: relative;
+  }
+}

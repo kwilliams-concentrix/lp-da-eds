@@ -1,0 +1,199 @@
+.nav-menu-feature {
+  --transition: all 0.2s ease-in-out;
+}
+.nav-menu-feature a {
+  align-items: center;
+  display: flex;
+  font-weight: 400;
+  justify-content: space-between;
+  line-height: 5rem;
+  width: 100%;
+}
+.nav-menu-feature .feature-content {
+  display: flex;
+  gap: 2rem;
+}
+.nav-menu-feature .feature-description {
+  font-size: 1.2rem;
+}
+.nav-menu-feature .feature-description,
+.nav-menu-feature .feature-title {
+  width: 100%;
+}
+.nav-menu-feature .feature-description,
+.nav-menu-feature .feature-image {
+  display: none;
+}
+.nav-menu-feature img {
+  margin-bottom: 1rem;
+}
+.nav-menu-feature li.show ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  left: 0;
+}
+.nav-menu-feature .section-title {
+  font-family: 'Chronicle Deck', serif;
+  font-size: 2.8rem;
+  line-height: 100%;
+  word-wrap: break-word;
+}
+.nav-menu-feature.show .nav-drop .nav-link {
+  border-bottom-color: #cccccc;
+}
+.nav-menu-feature.show .submenu-wrapper {
+  display: flex;
+  left: 0;
+}
+.nav-menu-feature .submenu-category ul {
+  background-color: white;
+  bottom: 0;
+  left: 0;
+  left: 100%;
+  padding: 0 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: var(--transition);
+}
+.nav-menu-feature .submenu-wrapper {
+  bottom: 0;
+  padding-bottom: 1rem;
+}
+.nav-menu-feature .submenu-wrapper .container {
+  flex-direction: column;
+}
+.nav-menu-feature .submenu-wrapper .container > div {
+  flex-basis: auto;
+}
+.nav-menu-feature .submenu-wrapper p {
+  line-height: 1.9rem;
+  margin-bottom: 0.5rem;
+}
+.nav-menu-feature .title-container {
+  display: none;
+}
+.nav-menu-feature ul {
+  display: block;
+}
+.nav-menu-feature ul ul a {
+  font-weight: normal;
+}
+.submenu-wrapper {
+  align-items: flex-start;
+  background-color: #fff;
+  box-sizing: border-box;
+  cursor: auto;
+  flex-direction: column;
+  font-family: var(--fontHeading);
+  left: 100%;
+  overflow: hidden auto;
+  padding: 0 calc((100% - 1280px) / 2);
+  position: absolute;
+  top: 5.6rem;
+  transition: var(--transition);
+  width: 100%;
+  z-index: 4;
+}
+.submenu-wrapper #topbar {
+  font-size: 1.4rem;
+}
+.submenu-wrapper ul {
+  display: block;
+}
+@media screen and (min-width: 900px) {
+  .nav-menu-feature a {
+    font-weight: 500;
+    line-height: 1.4em;
+  }
+  .nav-menu-feature .arrow-right {
+    display: none;
+  }
+  .nav-menu-feature .container {
+    padding: 0;
+  }
+  .nav-menu-feature .feature-description,
+  .nav-menu-feature .feature-image {
+    display: block;
+  }
+  .nav-menu-feature .feature-title {
+    font-weight: 700;
+  }
+  .nav-menu-feature .submenu-header {
+    display: none;
+  }
+  .nav-menu-feature .submenu-links li a {
+    font-weight: normal;
+  }
+  .nav-menu-feature .submenu-links li:first-child > a {
+    font-weight: 700;
+  }
+  .nav-menu-feature .submenu-title {
+    font-size: 4.5rem;
+    line-height: normal;
+  }
+  .nav-menu-feature .submenu-wrapper {
+    background-color: white;
+    border: 1px solid transparent;
+    bottom: auto;
+    box-shadow: 0 10px 10px rgba(102, 102, 102, 0.3);
+    display: none;
+    justify-content: space-between;
+    left: 0;
+    padding: 2.5rem;
+    position: absolute;
+    top: auto;
+    width: 100%;
+  }
+  .nav-menu-feature .submenu-wrapper .container {
+    flex-direction: row;
+  }
+  .nav-menu-feature .submenu-wrapper img {
+    height: auto;
+    max-width: 24rem;
+  }
+  .nav-menu-feature .submenu-wrapper li > * {
+    margin-bottom: 1.4rem;
+  }
+  .nav-menu-feature .submenu-wrapper li > a {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-menu-feature .submenu-wrapper li .feature-title {
+    margin-bottom: 0;
+  }
+  .nav-menu-feature .submenu-wrapper .menu-col {
+    padding: 2.5rem;
+  }
+  .nav-menu-feature .submenu-wrapper .menu-col.empty + .menu-col {
+    border-width: 0;
+  }
+  .nav-menu-feature .submenu-wrapper .submenu-feature,
+  .nav-menu-feature .submenu-wrapper .submenu-links,
+  .nav-menu-feature .submenu-wrapper .submenu-links2,
+  .nav-menu-feature .submenu-wrapper .submenu-section {
+    display: flex;
+    justify-content: stretch;
+  }
+  .nav-menu-feature .submenu-wrapper ul {
+    margin-bottom: 1rem;
+  }
+  .nav-menu-feature .submenu-wrapper ul ul {
+    display: block;
+    left: 0;
+    padding: 0;
+    position: relative;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .nav-menu-feature .submenu-category {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 2rem;
+  }
+  .nav-menu-feature .title-container {
+    display: block;
+  }
+}

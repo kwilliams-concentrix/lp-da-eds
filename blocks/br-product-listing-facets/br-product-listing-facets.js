@@ -8,7 +8,6 @@ import {
 import createModal from '../modal/modal.js';
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
-import { getRootPath } from '../../scripts/scripts.js';
 import { getFacets } from '../../scripts/helper/search.js';
 /**
  * Toggles all storeSelector sections
