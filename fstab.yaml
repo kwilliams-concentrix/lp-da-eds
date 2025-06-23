@@ -1,0 +1,7 @@
+mountpoints:
+  /:
+    url: https://content.da.live/kwilliams-concentrix/lp-da-eds/
+    type: markup
+
+folders:
+  /products/: /products/default
