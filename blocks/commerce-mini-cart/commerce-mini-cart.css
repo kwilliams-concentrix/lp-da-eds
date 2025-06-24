@@ -1,1 +1,21 @@
 /* stylelint-disable no-empty-source */
+
+.cart-mini-cart {
+    display: none;
+    left: 100vw;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+    width: 50vw;
+}
+
+.commerce-mini-cart {
+    align-items: center;
+    display: flex;
+}
+
+#mini-cart-container {
+}
+
+#mini-cart-container.open .cart-mini-cart {
+    left: 50vw;
+}
