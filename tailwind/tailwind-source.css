@@ -1,0 +1,203 @@
+@import "tailwindcss/base";
+@import "base/structure.css";
+
+@import "tailwindcss/components";
+@import "components/button.css" layer(components);
+@import "components/modal.css" layer(components);
+@import "components/nav.css" layer(components);
+@import "components/global.css" layer(components);
+
+/* EDS Block */
+@import "blocks/fragment.css";
+@import "blocks/content.css";
+@import "blocks/header.css";
+@import "blocks/footer.css";
+@import "blocks/hero.css";
+@import "blocks/messages.css";
+@import "blocks/cards.css";
+@import "blocks/columns.css";
+
+@import "tailwindcss/utilities";
+
+@layer base {
+    /*/ Gotham /*/
+    @font-face {
+        font-family: 'Gotham';
+        font-style: normal;
+        font-weight: 100;
+        font-display: swap;
+        src: url(../fonts/Gotham/Gotham-Light/Gotham-Light.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Gotham';
+        font-style: normal;
+        font-weight: 200;
+        font-display: swap;
+        src: url(../fonts/Gotham/Gotham-Light/Gotham-Light.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Gotham';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url(../fonts/Gotham/Gotham-Book/Gotham-Book.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Gotham';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(../fonts/Gotham/Gotham-Book/Gotham-Book.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Gotham';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(../fonts/Gotham/Gotham-Medium/Gotham-Medium.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Gotham';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(../fonts/Gotham/Gotham-Medium/Gotham-Medium.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Gotham';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(../fonts/Gotham/Gotham-Medium/Gotham-Medium.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Gotham';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(../fonts/Gotham/Gotham-Bold/Gotham-Bold.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Gotham';
+        font-style: normal;
+        font-weight: 900;
+        font-display: swap;
+        src: url(../fonts/Gotham/Gotham-Bold/Gotham-Bold.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Gotham';
+        font-style: normal;
+        font-weight: bold;
+        font-display: swap;
+        src: url(../fonts/Gotham/Gotham-Bold/Gotham-Bold.woff2) format('woff2');
+    }
+
+    /*/ Chronicle /*/
+    @font-face {
+        font-family: 'Chronicle Deck';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(../fonts/Chronicle/ChronicleDeck-Roman/ChronicleDeck-Roman.woff2) format('woff2');
+    }
+
+    /*/ Chronicle Semibold /*/
+    @font-face {
+        font-family: 'Chronicle Deck Semibold';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(../fonts/Chronicle/ChronicleDeck-Semibold/ChronicleDeck-Semibold.woff2) format('woff2');
+    }
+
+    /*/ Inter /*/
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 100;
+        font-display: swap;
+        src: url(../fonts/Inter/Inter-Light/Inter-Light.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 200;
+        font-display: swap;
+        src: url(../fonts/Inter/Inter-Light/Inter-Light.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url(../fonts/Inter/Inter-Light/Inter-Light.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(../fonts/Inter/Inter-Regular/Inter-Regular.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(../fonts/Inter/Inter-Regular/Inter-Regular.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(../fonts/Inter/Inter-SemiBold/Inter-SemiBold.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(../fonts/Inter/Inter-SemiBold/Inter-SemiBold.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(../fonts/Inter/Inter-Bold/Inter-Bold.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 900;
+        font-display: swap;
+        src: url(../fonts/Inter/Inter-Bold/Inter-Bold.woff2) format('woff2');
+    }
+
+    /*/ Roboto /*/
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(../fonts/Roboto/Roboto-Regular.woff2) format('woff2');
+    }
+}

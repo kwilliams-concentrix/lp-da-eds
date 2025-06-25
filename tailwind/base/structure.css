@@ -1,0 +1,203 @@
+/* Base Styles for any EDS enviorment, made compatible with Hyvä and TailwindCSS */
+:root {
+    --color-bg: #fff;
+    --color-text: #111;
+
+    --color-primary: theme("colors.primary.DEFAULT");
+    --color-primary-darker: theme("colors.primary.darker");
+    --color-primary-lighter: theme("colors.primary.lighter");
+    --color-on-primary: theme("colors.white");
+
+    --color-secondary: theme("colors.secondary.DEFAULT");
+    --color-secondary-darker: theme("colors.secondary.darker");
+    --color-secondary-lighter: theme("colors.secondary.lighter");
+    --color-on-secondary: theme("colors.black");
+
+    --color-bg-container-lighter: theme("backgroundColor.container.lighter");
+    --color-bg-container: theme("backgroundColor.container.DEFAULT");
+    --color-bg-container-darker: theme("backgroundColor.container.darker");
+
+    --color-border-container-lighter: theme("borderColor.container.lighter");
+    --color-border-container: theme("borderColor.container.DEFAULT");
+    --color-border-container-darker: theme("borderColor.container.darker");
+
+    --font-family-sans: theme("fontFamily.sans");
+    --font-family-mono: theme("fontFamily.mono");
+
+    --font-size-xs: theme("fontSize.xs");
+    --font-size-sm: theme("fontSize.sm");
+    --font-size-md: theme("fontSize.base");
+    --font-size-lg: theme("fontSize.lg");
+    --font-size-xl: theme("fontSize.xl");
+    --font-size-2xl: theme("fontSize.2xl");
+    --font-size-3xl: theme("fontSize.3xl");
+    --font-size-4xl: theme("fontSize.4xl");
+    --font-size-5xl: theme("fontSize.5xl");
+
+    --shadow-sm: theme("boxShadow.sm");
+    --shadow: theme("boxShadow.DEFAULT");
+    --shadow-md: theme("boxShadow.md");
+    --shadow-lg: theme("boxShadow.lg");
+    --shadow-xl: theme("boxShadow.xl");
+
+    --radius-sm: theme("borderRadius.sm");
+    --radius: theme("borderRadius.DEFAULT");
+    --radius-md: theme("borderRadius.md");
+    --radius-lg: theme("borderRadius.lg");
+    --radius-xl: theme("borderRadius.xl");
+
+    --z-10: theme("zIndex.10");
+    --z-20: theme("zIndex.20");
+    --z-30: theme("zIndex.30");
+    --z-40: theme("zIndex.40");
+    --z-50: theme("zIndex.50");
+
+    --container-size-sm: theme('screens.sm');
+    --container-size-md: theme('screens.md');
+    --container-size-lg: theme('screens.lg');
+    --container-size-xl: theme('screens.xl');
+    --container-size-2xl: theme('screens.2xl');
+
+    --chevron-light-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="hsl(0 0% 0%)"><path d="m6 9 6 6 6-6"/></svg>');
+    --chevron-dark-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="hsl(0 0% 100%)"><path d="m6 9 6 6 6-6"/></svg>');
+}
+
+:where(html) {
+    scrollbar-gutter: stable;
+}
+
+body {
+    @apply flex flex-col min-h-screen;
+    font-family: var(--font-family-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+
+    &:not(.appear) {
+        display: none;
+    }
+}
+
+/* These styles are used to display fonts correctly. */
+body {
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+main {
+    @apply grow;
+}
+
+/* Reenable flow content from the default EDS styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-block: 1em 0.5em;
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: var(--font-size-5xl);
+}
+
+h2 {
+    font-size: var(--font-size-3xl);
+}
+
+h3 {
+    font-size: var(--font-size-2xl);
+}
+
+h4 {
+    font-size: var(--font-size-xl);
+}
+
+h5 {
+    font-size: var(--font-size-lg);
+}
+
+p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
+    margin-block: 1em;
+}
+
+code,
+pre {
+    font-family: var(--font-family-mono);
+}
+
+code {
+    padding: 0.125em;
+}
+
+pre {
+    overflow: auto;
+}
+
+:any-link {
+    @apply font-medium no-underline;
+    color: var(--color-primary-darker);
+
+    &:where(:hover, :focus) {
+        @apply underline;
+    }
+}
+
+:where(main) {
+    & :is(ul, ol) {
+        @apply list-disc ps-6;
+    }
+}
+
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+
+    & :where(img, svg) {
+        &:where(:not([width])) {
+            width: 24px;
+        }
+
+        &:where(:not([height])) {
+            height: 24px;
+        }
+    }
+}
+
+main .section > div,
+footer .section > div {
+    @apply container;
+}
+
+main .section {
+    @apply py-8;
+}
+
+footer .section > div {
+    @apply pt-8;
+}
+
+main .section:empty {
+    @apply hidden;
+}
+
+.section.light,
+.section.highlight {
+    background-color: var(--color-bg-container);
+}
+
+[hidden] {
+    display: none !important;
+}

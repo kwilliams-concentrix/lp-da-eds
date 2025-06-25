@@ -1,0 +1,73 @@
+.default-content-wrapper {
+    & > :first-child {
+        margin-top: 0;
+    }
+
+    & p:empty {
+        @apply hidden;
+    }
+}
+
+/* DEFAULT CONTENT WRAPPER - HOME */
+main .hero-container {
+    .default-content-wrapper {
+        h2 {
+            margin: 0;
+        }
+
+        &:first-of-type {
+            display: none;
+        }
+    }
+
+    > div {
+        box-shadow: none;
+        padding: 0 16px;
+
+        &:not(.default-content-wrapper) {
+            margin-bottom: 40px;
+        }
+
+        &.default-content-wrapper {
+            h2 {
+                font-size: 40px;
+                line-height: 56px;
+                text-align: center;
+
+                &#home-lighting--furnishings---quality-style-and-selection {
+                    font-size: 25px;
+                    line-height: 140%;
+                    text-align: left;
+                }
+            }
+
+            &:last-of-type {
+                margin-bottom: 56px;
+
+                p {
+                    font-size: 14px;
+                    line-height: 19.2px;
+                }
+            }
+        }
+    }
+}
+/* END DEFAULT CONTENT WRAPPER - HOME */
+
+
+@screen md {
+    /* DEFAULT CONTENT WRAPPER - HOME */
+    main .hero-container {
+        > div {
+            &:not(.default-content-wrapper) {
+              margin-bottom: 55px;
+            }
+
+            &.default-content-wrapper h2 {
+              font-size: 64px;
+              line-height: 76.8px;
+            }
+        }
+    }
+    /* END DEFAULT CONTENT WRAPPER - HOME */
+}

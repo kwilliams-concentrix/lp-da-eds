@@ -1,0 +1,158 @@
+.eds-nav {
+    & a,
+    & li:not(:has(> a)) {
+        @apply px-8 py-4 font-normal;
+
+        @screen lg {
+            @apply py-2 px-0.5 text-gray-700;
+        }
+    }
+
+    & li {
+        @apply flex justify-between items-center border-b border-container;
+
+        @screen lg {
+            @apply border-b-0;
+        }
+    }
+
+    & button {
+        @apply select-none;
+    }
+
+    & a {
+        @apply block grow no-underline;
+    }
+
+    & .eds-nav-content {
+        @apply hidden z-20 fixed top-0 right-0 w-full h-full bg-container-lighter;
+
+        & > ul {
+            @apply flex flex-col overflow-y-auto overscroll-y-contain;
+        }
+
+        &.is-open {
+            @apply block;
+        }
+
+        @screen lg {
+            @apply block static p-1;
+
+            & > ul {
+                @apply flex-row justify-start flex-wrap gap-x-7 py-4 overflow-y-visible;
+
+                & > li:has(a) {
+                    @apply border-b-2 border-transparent hover:border-primary;
+
+                    & > .subnav-toggle svg {
+                        @apply rotate-0;
+                    }
+
+                    &.is-open {
+                        @apply border-primary;
+                    }
+                }
+            }
+        }
+    }
+
+    & .mobile-nav-open {
+        @apply p-3 lg:hidden;
+    }
+
+    & .mobile-nav-close {
+        @apply p-2;
+    }
+
+    & .subnav-toggle {
+        @apply flex items-center justify-center p-1 rounded bg-container-lighter border border-container;
+
+        @screen lg {
+            @apply border-0 text-gray-500;
+        }
+
+        & svg {
+            @apply -rotate-90;
+        }
+    }
+
+    & .has-subnav {
+        --subnav-is-open: initial;
+        @apply relative;
+
+        &.is-open {
+            --subnav-is-open: /* */ ;
+        }
+
+        & > .subnav-toggle {
+            @apply mr-8 lg:mr-0;
+        }
+
+        &:not(:has(> a)) {
+            & > .subnav-toggle {
+                @apply mr-0 -my-1;
+            }
+        }
+
+        @screen lg {
+            &:hover {
+                --subnav-is-open: /* */ ;
+            }
+
+            &.is-open > .subnav-toggle {
+                @apply text-gray-900;
+            }
+        }
+    }
+
+    & .subnav {
+        @apply z-10 fixed inset-0 bg-container-lighter mt-16 overflow-y-auto overscroll-y-contain;
+        display: var(--subnav-is-open, none);
+        translate: var(--subnav-is-open, 100% 0%);
+        transition-property: translate, display;
+        transition-duration: 150ms;
+        transition-behavior: allow-discrete;
+
+        & a {
+            @apply ml-10;
+        }
+
+        @starting-style {
+            translate: 100% 0%;
+        }
+
+        @screen lg {
+            @apply absolute inset-auto top-full px-6 py-4 mt-0.5 -ml-6 shadow-lg rounded-sm overflow-y-visible;
+            translate: none;
+
+            & .subnav {
+                @apply top-0 left-full -mt-3 ml-0;
+            }
+
+            & a {
+                @apply whitespace-nowrap hover:underline ml-0;
+            }
+        }
+    }
+
+    & .subnav-back {
+        @apply bg-container lg:hidden p-0;
+
+        & button {
+            @apply flex justify-start items-center px-8 py-4 gap-4 border-0 bg-transparent w-full;
+        }
+
+        & svg {
+            @apply rotate-90;
+        }
+    }
+
+    & .eds-nav-header {
+        @apply flex justify-end items-center shrink-0 h-16 px-4 lg:hidden;
+    }
+
+    /* Dont allow nesting deeper then 4 levels */
+    & ul ul ul ul {
+        @apply !hidden;
+    }
+}

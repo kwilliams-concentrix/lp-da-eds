@@ -1,0 +1,69 @@
+:is(.btn, .button, :where(main) button) {
+    @apply inline-flex bg-gray-500 rounded-lg px-4 py-2 text-white text-base font-medium shadow-md items-center not-italic no-underline cursor-pointer;
+
+    @screen md {
+        @apply px-6 text-lg;
+    }
+
+    @screen xl {
+        @apply text-base;
+    }
+
+    svg {
+        @apply inline-flex;
+    }
+
+    span {
+        vertical-align: middle;
+    }
+
+    &:hover {
+        @apply bg-gray-600;
+    }
+
+    &:focus-visible {
+        @apply outline-none border-transparent ring-4 ring-primary ring-opacity-50;
+    }
+}
+
+.btn-primary,
+:where(.button, :where(main) button).primary {
+    @apply bg-primary text-white shadow-md;
+
+    &:hover {
+        @apply bg-primary-lighter text-white shadow-lg;
+    }
+}
+
+.btn-secondary,
+:where(.button, :where(main) button).secondary {
+    @apply bg-white border-2 border-primary-lighter text-black shadow-md;
+
+    &:hover {
+        @apply bg-white border-primary-darker shadow-lg;
+    }
+
+    &:focus-visible {
+        @apply border-2 border-transparent;
+    }
+}
+
+.btn-flat {
+    @apply bg-transparent border-0 shadow-none text-current;
+
+    &:hover {
+        @apply bg-primary/10 text-current;
+    }
+
+    &:focus-visible {
+        @apply bg-primary/10 text-current;
+    }
+}
+
+.btn-size-lg {
+    @apply px-10 py-4 text-lg;
+}
+
+.btn-size-sm {
+    @apply px-2 py-2 text-sm;
+}

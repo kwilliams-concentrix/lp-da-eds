@@ -1,0 +1,23 @@
+.dialog {
+    @apply translate-x-full ease-out duration-500 sm:duration-700;
+    transition-property: transform, display, overlay;
+    transition-behavior: allow-discrete;
+
+    &.is-open {
+        @apply translate-x-0;
+    }
+}
+
+html:has(.dialog.is-open) {
+    overflow: hidden;
+}
+
+@starting-style {
+    .dialog.is-open {
+        @apply translate-x-full;
+    }
+}
+
+.backdrop {
+    @apply fixed inset-0 flex bg-black bg-opacity-25;
+}

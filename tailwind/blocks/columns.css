@@ -1,0 +1,68 @@
+.columns-wrapper:not(:first-child) {
+    @apply mt-16;
+}
+
+.columns {
+    container-type: inline-size;
+}
+
+.columns > div {
+    display: grid;
+    grid-template-columns: repeat(var(--columns-cols, 1), minmax(0, 1fr));
+    gap: 0 var(--columns-gap, 2rem);
+
+    & > div {
+        &:empty {
+            display: none;
+        }
+
+        & > :first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.columns > div + div {
+    margin-top: var(--columns-gap, 1.5rem);
+}
+
+.columns.columns-2-cols > div > .columns-img-col {
+    order: -1;
+}
+
+.columns .columns-img-col img {
+    width: 100%;
+    border-radius: var(--radius-xl);
+}
+
+@container (width >= 768px) {
+    .columns > div {
+        --columns-cols: 2;
+    }
+
+    .columns.columns-2-cols > div > .columns-img-col {
+        order: unset;
+    }
+}
+
+@container (width >= 1024px) {
+    .columns:not(.columns-2-cols) > div {
+        --columns-cols: 3;
+    }
+
+    .columns.columns-4-cols > div {
+        --columns-cols: 4;
+    }
+}
+
+@container (width >= 1280px) {
+    .columns:not(.columns-2-cols, .columns-3-cols) > div {
+        --columns-cols: 4;
+    }
+}
+
+@container (width >= 1536px) {
+    .columns:not(.columns-2-cols, .columns-3-cols, .columns-4-cols) > div {
+        --columns-cols: 5;
+    }
+}

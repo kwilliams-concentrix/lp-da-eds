@@ -1,0 +1,33 @@
+.cards > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(var(--cards-col-size, 278px), 1fr)
+    );
+    gap: var(--cards-gap, 1rem);
+}
+
+.cards > ul > li {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius-xl);
+    overflow: clip;
+}
+
+.cards .cards-card-body {
+    padding: 1rem 1.25rem;
+}
+
+.cards .cards-card-body > :first-child {
+    margin-top: 0;
+}
+
+.cards > ul > li img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
