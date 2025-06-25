@@ -1,3 +1,46 @@
 {
-  "extends": ["stylelint-config-standard"]
+  "extends": ["stylelint-config-standard"],
+  "ignoreFiles": "styles/styles.css",
+  "rules": {
+    "declaration-empty-line-before": "never",
+    "custom-property-empty-line-before": null,
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": ["mask-image"]
+      }
+    ],
+    "no-descending-specificity": null
+  },
+  "overrides": [
+    {
+      "files": ["tailwind/*.css", "tailwind/**/*.css"],
+      "rules": {
+        "at-rule-empty-line-before": [
+          "always",
+          {
+            "except": ["blockless-after-same-name-blockless", "first-nested"],
+            "ignore": ["after-comment"],
+            "ignoreAtRules": ["import", "if", "else", "apply"]
+          }
+        ],
+        "at-rule-no-unknown": [
+          true,
+          {
+            "ignoreAtRules": ["tailwind", "apply", "layer", "screen", "config"]
+          }
+        ],
+        "function-no-unknown": [
+          true,
+          {
+            "ignoreFunctions": ["theme"]
+          }
+        ],
+        "import-notation": [
+          "string",
+          { "except": ["blockless-after-same-name-blockless", "first-nested"] }
+        ]
+      }
+    }
+  ]
 }
