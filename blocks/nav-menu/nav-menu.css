@@ -9,6 +9,9 @@
   line-height: 5rem;
   width: 100%;
 }
+.nav-menu.block a.button {
+  padding: 0;
+}
 .nav-menu.block img {
   margin-bottom: 1rem;
 }
@@ -62,6 +65,9 @@
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
 }
+.nav-menu.block .submenu-wrapper p.button-container {
+  margin: 0;
+}
 .nav-menu.block ul {
   display: block;
 }
@@ -94,6 +100,10 @@
   .nav-menu.block a {
     font-weight: 500;
     line-height: 1.4em;
+  }
+  .nav-menu.block a.button {
+    margin-bottom: 1.4rem;
+    padding: 0;
   }
   .nav-menu.block .arrow-right {
     display: none;
