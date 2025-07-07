@@ -99,8 +99,6 @@ export default function decorate(block) {
 
       // separate the key and value columns
       const [key, value] = [...row.children];
-      // console.log(key.textContent);
-      // console.log(value);
 
       // new column container
       const col = document.createElement('div');
@@ -126,9 +124,77 @@ export default function decorate(block) {
       [...value.children].map((child) => {
 
         /* ORIGINAL START */
-        // [...child.children].map((elem) => {
+        [...child.children].map((elem) => {
 
-        //   // if just one child element
+          // if just one child element
+          if (elem.children.length === 1) {
+            [...elem.childNodes].map((node) => {
+              const li = document.createElement('li');
+
+              if (node.nodeType === 3) {
+                const textNodeContent = node.textContent.trim();
+                if (textNodeContent.length > 0) {
+                  const paragraph = document.createElement('p');
+                  paragraph.textContent = textNodeContent;
+                  li.appendChild(paragraph);
+                }
+              } else {
+                // submenu link
+                li.appendChild(node);
+              }
+
+              submenuList.appendChild(li);
+            });
+          }
+
+          // if child has submenu
+          if (elem.children.length > 1) {
+            // loop through children
+            [...elem.children].map((childElem) => {
+
+              // link
+              if (childElem.tagName === 'P') {
+                // take apart and rebuild link
+                const childLink = childElem.querySelector('a');
+
+                if (childLink) {
+                  if (childElem.nextElementSibling.tagName === 'UL') {
+                    childLink.classList.add('nav-link');
+                  }
+
+                  // add arrow
+                  const arrowRight = document.createElement('span');
+                  arrowRight.classList = 'arrow-right';
+                  arrowRight.innerHTML = `<img src="../icons/chevron-right.svg" alt="test" />`;
+                  childLink.appendChild(arrowRight);
+
+                  listItem.appendChild(childLink);
+                }
+              }
+
+              // list
+              if (childElem.tagName === 'UL') {
+                listItem.classList.add('submenu-category');
+                listItem.appendChild(childElem);
+              }
+
+              // picture
+              if (childElem.tagName === 'PICTURE') {
+                col.appendChild(childElem);
+              }
+
+            });
+
+            // append processed markup
+            col.appendChild(submenuList);
+          }
+          
+        });
+        /* ORIGINAL END */
+
+        /* ALTERNATIVE START */
+        // // add all children from the current row
+        // [...child.children].map((elem) => {
         //   if (elem.children.length === 1) {
         //     [...elem.childNodes].map((node) => {
         //       const li = document.createElement('li');
@@ -141,10 +207,8 @@ export default function decorate(block) {
         //           li.appendChild(paragraph);
         //         }
         //       } else {
-        //         // submenu link
         //         li.appendChild(node);
         //       }
-
         //       submenuList.appendChild(li);
         //     });
         //   }
@@ -154,15 +218,35 @@ export default function decorate(block) {
         //     // loop through children
         //     [...elem.children].map((childElem) => {
 
-        //       // link
+        //       // paragraph
         //       if (childElem.tagName === 'P') {
-        //         // take apart and rebuild link
         //         const childLink = childElem.querySelector('a');
 
         //         if (childLink) {
+                  
         //           if (childElem.nextElementSibling.tagName === 'UL') {
         //             childLink.classList.add('nav-link');
         //           }
+
+        //           // add arrow
+        //           const arrowRight = document.createElement('span');
+        //           arrowRight.classList = 'arrow-right';
+        //           arrowRight.innerHTML = `<img src="../icons/chevron-right.svg" alt="test" />`;
+        //           childLink.appendChild(arrowRight);
+  
+        //           listItem.appendChild(childLink);
+        //         }
+
+        //       }
+
+        //       // link
+        //       if (childElem.tagName === 'A') {
+        //         // take apart and rebuild link
+        //         const childLink = childElem;
+
+        //         if (childElem.nextElementSibling.tagName === 'UL') {
+        //           childLink.classList.add('nav-link');
+        //         }
 
         //         // add arrow
         //         const arrowRight = document.createElement('span');
@@ -179,105 +263,21 @@ export default function decorate(block) {
         //         listItem.appendChild(childElem);
         //       }
 
+        //       // paragraph
+        //       if (childElem.tagName === 'P') {
+        //         col.appendChild(childElem);
+        //       }
+
         //       // picture
         //       if (childElem.tagName === 'PICTURE') {
         //         col.appendChild(childElem);
         //       }
-        //     }
-        //   });
-
-        //     // append processed markup
-        //     col.appendChild(submenuList);
+        //     });
         //   }
+
+        //   // append processed markup
+        //   col.appendChild(submenuList);
         // });
-        /* ORIGINAL END */
-
-        /* ALTERNATIVE START */
-        // add all children from the current row
-        [...child.children].map((elem) => {
-          if (elem.children.length === 1) {
-            [...elem.childNodes].map((node) => {
-              const li = document.createElement('li');
-
-              if (node.nodeType === 3) {
-                const textNodeContent = node.textContent.trim();
-                if (textNodeContent.length > 0) {
-                  const paragraph = document.createElement('p');
-                  paragraph.textContent = textNodeContent;
-                  li.appendChild(paragraph);
-                }
-              } else {
-                li.appendChild(node);
-              }
-              submenuList.appendChild(li);
-            });
-          }
-
-          // if child has submenu
-          if (elem.children.length > 1) {
-            // loop through children
-            [...elem.children].map((childElem) => {
-
-              // paragraph
-              if (childElem.tagName === 'P') {
-                const childLink = childElem.querySelector('a');
-
-                if (childLink) {
-                  
-                  if (childElem.nextElementSibling.tagName === 'UL') {
-                    childLink.classList.add('nav-link');
-                  }
-
-                  // add arrow
-                  const arrowRight = document.createElement('span');
-                  arrowRight.classList = 'arrow-right';
-                  arrowRight.innerHTML = `<img src="../icons/chevron-right.svg" alt="test" />`;
-                  childLink.appendChild(arrowRight);
-  
-                  listItem.appendChild(childLink);
-                }
-
-              }
-
-              // link
-              if (childElem.tagName === 'A') {
-                // take apart and rebuild link
-                const childLink = childElem;
-
-                if (childElem.nextElementSibling.tagName === 'UL') {
-                  childLink.classList.add('nav-link');
-                }
-
-                // add arrow
-                const arrowRight = document.createElement('span');
-                arrowRight.classList = 'arrow-right';
-                arrowRight.innerHTML = `<img src="../icons/chevron-right.svg" alt="test" />`;
-                childLink.appendChild(arrowRight);
-
-                listItem.appendChild(childLink);
-              }
-
-              // list
-              if (childElem.tagName === 'UL') {
-                listItem.classList.add('submenu-category');
-                listItem.appendChild(childElem);
-              }
-
-              // paragraph
-              if (childElem.tagName === 'P') {
-                col.appendChild(childElem);
-              }
-
-              // picture
-              if (childElem.tagName === 'PICTURE') {
-                col.appendChild(childElem);
-              }
-            });
-          }
-
-          // append processed markup
-          col.appendChild(submenuList);
-        });
         /* ALTERNATIVE END */
 
         // if (child.tagName === 'UL') {
