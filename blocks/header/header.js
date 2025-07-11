@@ -16,7 +16,7 @@ import applyHashTagsForDomElement from '../../scripts/api/hashtags/api.js';
 
 // check the localStorage for a customer type and apply the appropriate styles
 import { getCustomerType } from '../../scripts/helper/customer.js';
-const customerType = getCustomerType(true);
+const customerType = getCustomerType();
 
 // check the localStorage for a customer type and add the appropriate class
 if (customerType === 'Pro') {

@@ -21,6 +21,11 @@ header {
 header > * {
   align-items: center;
 }
+header a.button,
+header a.button:hover {
+  background-color: transparent;
+  box-shadow: none;
+}
 header button#customer-menu {
   line-height: normal;
 }
@@ -221,7 +226,13 @@ header #top-links ul {
   width: 100%;
 }
 #header-utilities {
+  display: flex;
+  gap: 1rem;
   justify-content: flex-end;
+}
+#header-utilities > * {
+  display: inherit;
+  gap: inherit;
 }
 .header-wrapper {
   padding: 0;
@@ -384,6 +395,11 @@ body.pro #top-links li[data-name='pros'] {
   #header-search.show {
     margin-top: 0;
     position: relative;
+  }
+  .nav-sections > div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 @media screen and (min-width: 1200px) {

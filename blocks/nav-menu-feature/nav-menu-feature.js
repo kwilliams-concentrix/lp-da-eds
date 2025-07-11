@@ -62,6 +62,21 @@ const createFeatureLinks = (linksNode, col) => {
   const titleLink = document.createElement('a');
   [...linksNode.firstElementChild.children].forEach((child) => {
     [...child.children].forEach((elem) => {
+      // console.log('found tag', elem.tagName);
+
+      // if (elem.querySelectorAll('a').length > 0) {
+      //   console.log(elem.textContent, elem.querySelectorAll('a'))
+      // }
+
+      if (elem.tagName === 'P') {
+        const link = elem.querySelector('a');
+        const newLink = document.createElement('a');
+        newLink.classList.add('feature-title');
+        newLink.href = link.href;
+        newLink.textContent = link.textContent.trim();
+        col.querySelector('.submenu-category').append(newLink);
+      } 
+
       if (elem.tagName === 'A') {
         // if the child is a link, add it to the column
         titleLink.classList.add('feature-title');

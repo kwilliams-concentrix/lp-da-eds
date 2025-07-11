@@ -21,6 +21,11 @@ header {
     align-items: center;
   }
 
+  a.button, a.button:hover {
+    background-color: transparent;
+    box-shadow: none;;
+  }
+
   background-color: white;
 
   button {
@@ -305,6 +310,13 @@ header {
 }
 
 #header-utilities {
+  > * {
+    display: inherit;
+    gap: inherit;
+  }
+  
+  display: flex;
+  gap: 1rem;
   justify-content: flex-end;
 }
 
@@ -523,6 +535,12 @@ body.pro {
       margin-top: 0;
       position: relative;
     }
+  }
+
+  .nav-sections > div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 
