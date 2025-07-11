@@ -170,6 +170,9 @@
   .nav-menu.block .submenu-wrapper .menu-col:not(.empty) {
     border-left: 1px solid #d9d9d9;
   }
+  .nav-menu.block .submenu-wrapper p.button-container {
+    margin-bottom: 1.4rem;
+  }
   .nav-menu.block .submenu-wrapper .submenu-feature,
   .nav-menu.block .submenu-wrapper .submenu-links,
   .nav-menu.block .submenu-wrapper .submenu-links2,
