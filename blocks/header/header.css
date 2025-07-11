@@ -226,7 +226,13 @@ header #top-links ul {
   width: 100%;
 }
 #header-utilities {
+  display: flex;
+  gap: 1rem;
   justify-content: flex-end;
+}
+#header-utilities > * {
+  display: inherit;
+  gap: inherit;
 }
 .header-wrapper {
   padding: 0;
